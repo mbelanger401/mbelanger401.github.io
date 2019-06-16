@@ -8,39 +8,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Qlik Connectivity for KNIME | qvx-reader-and-writer nodes</title>
+<title>Qlik Connectivity Nodes for KNIME | qvx-reader-and-writer nodes</title>
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Qlik Connectivity Nodes for KNIME" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="KNIME nodes to read and write qvx files" />
 <meta property="og:description" content="KNIME nodes to read and write qvx files" />
-<link rel="canonical" href="https://samthiriot.github.io/knime-shapefiles-as-WKT/" /> <!--TODO -->
-<meta property="og:url" content="https://samthiriot.github.io/knime-shapefiles-as-WKT/" /> <!-- TODO -->
-<meta property="og:site_name" content="qlik-connectivity" />
+<link rel="canonical" href="https://mbelanger401.github.io/qlik-connectivity.html/" />
+<meta property="og:url" content="https://mbelanger401.github.io/qlik-connectivity.html/" />
+<meta property="og:site_name" content="qlik-connectivity.html" />
 <script type="application/ld+json">
-<!--TODO -->{"@type":"WebSite","url":"https://samthiriot.github.io/knime-shapefiles-as-WKT/","headline":"Spatial Processing Nodes for KNIME","name":"knime-shapefiles-as-WKT","description":"KNIME nodes to manipulate spatial data in their Well-Known Text format counterpart","@context":"http://schema.org"}</script>
+{"@type":"WebSite","url":"https://mbelanger401.github.io/qlik-connectivity.html","headline":"Qlik Connectivity Nodes for KNIME","name":"qlik-connectivity","description":"KNIME nodes to read and write qvx files","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/knime-shapefiles-as-WKT/assets/css/style.css?v=fae0fe8f9a06e0c346ddf673800b9cca48cfd693"> <!--TODO -->
+    <link rel="stylesheet" href="/knime-shapefiles-as-WKT/assets/css/style.css?v=fae0fe8f9a06e0c346ddf673800b9cca48cfd693"> <!--TODO: Create stylesheet -->
   </head>
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
       
-      <h1><a href="https://samthiriot.github.io/knime-shapefiles-as-WKT/">qlik-connectivity</a></h1> <!-- TODO -->
+      <h1><a href="https://mbelanger401.github.io/qlik-connectivity.html">qlik-connectivity</a></h1> <!-- TODO -->
       
 
       
-<h1 id="spatial-processing-nodes-for-knime">Spatial Processing Nodes for KNIME</h1>
+<h1 id="qlik-connectivity-nodes-for-knime">Qlik Connectivity Nodes for KNIME</h1>
 
-<p>The “Spatial Processing Nodes” collection of nodes 
-propose to read and write spatial data from various formats, and provide basic transformation, filtering and visualization features.</p>
+<p>The purpose of the "Qlik Connectivity" collection of nodes is to read and write qvx files. The QVX Reader node converts qvx data into a Knime data table.
+The QVX Writer node converts a Knime data table into qvx data</p>
 
-<p><img src="/knime-shapefiles-as-WKT/capture_main.png" alt="Screenshot of the spatial nodes" /></p>
+<p><img src="/images/Reader Example - Output.png" alt="Screenshot of a QVX Reader workflow" /></p>
+<p><img src="/images/Writer Example - Output.png" alt="Screenshot of a QVX Writer workflow" /></p>
+
 
 <h2 id="alternatives-and-originality">Alternatives and originality</h2>
 
-<p>At some point of time came the question: how to read shapefiles in KNIME? 
-Several other collections of nodes enable the manipulation of spatial data in KNIME:</p>
+<p>The Qlik Connectivity nodes were created so that data stored in qvx format could be analyzed in Knime, and so Knime data could be analyzed in QlikView</p>
 <ul>
   <li>The <a href="https://www.knime.com/shapefile-extension">Shapefile extension</a> offers nodes to read ESRI shapefiles (either polygons or polylines). The spatial information (the lines or polygons) are stored in a column having a specific format. This spatial information can then be displayed using the OpenStreetMap nodes.</li>
   <li>The <a href="https://nodepit.com/iu/org.knime.features.ext.osm.feature.group">OpenStreetMap nodes</a> enable to filter rows to keep only the geometries within a given geometry and to plot markers upon an openstreetmap background.</li>
