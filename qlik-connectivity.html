@@ -2,185 +2,107 @@
 
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Qlik Connectivity Nodes for KNIME | qvx-reader-and-writer nodes</title>
-<meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Qlik Connectivity Nodes for KNIME" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="KNIME nodes to read and write qvx files" />
-<meta property="og:description" content="KNIME nodes to read and write qvx files" />
-<link rel="canonical" href="https://mbelanger401.github.io/qlik-connectivity.html/" />
-<meta property="og:url" content="https://mbelanger401.github.io/qlik-connectivity.html/" />
-<meta property="og:site_name" content="qlik-connectivity.html" />
-<script type="application/ld+json">
-{"@type":"WebSite","url":"https://mbelanger401.github.io/qlik-connectivity.html","headline":"Qlik Connectivity Nodes for KNIME","name":"qlik-connectivity","description":"KNIME nodes to read and write qvx files","@context":"http://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+		<title>Qlik Connectivity Nodes for KNIME</title>
+		<meta name="generator" content="Jekyll v3.8.5" />
+		<meta property="og:title" content="Qlik Connectivity Nodes for KNIME" />
+		<meta property="og:locale" content="en_US" />
+		<meta name="description" content="KNIME nodes to read and write qvx files" />
+		<meta property="og:description" content="KNIME nodes to read and write qvx files" />
+		<link rel="canonical" href="https://mbelanger401.github.io/qlik-connectivity.html/" />
+		<meta property="og:url" content="https://mbelanger401.github.io/qlik-connectivity.html/" />
+		<meta property="og:site_name" content="qlik-connectivity.html" />
+		<script type="application/ld+json">
+		{"@type":"WebSite","url":"https://mbelanger401.github.io/qlik-connectivity.html","headline":"Qlik Connectivity Nodes for KNIME",
+		"name":"qlik-connectivity","description":"KNIME nodes to read and write qvx files","@context":"http://schema.org"}
+		</script>
+		<!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/knime-shapefiles-as-WKT/assets/css/style.css?v=fae0fe8f9a06e0c346ddf673800b9cca48cfd693"> <!--TODO: Create stylesheet -->
-  </head>
-  <body>
-    <div class="container-lg px-3 my-5 markdown-body">
+		<link rel="stylesheet" href="qlik-connectivity.css">
+	</head>
+
+	<body>
+		<div class="container-lg px-3 my-5 markdown-body" id = "mainDiv">
       
-      <h1><a href="https://mbelanger401.github.io/qlik-connectivity.html">qlik-connectivity</a></h1> <!-- TODO -->
-      
+		<h1 id="qlik-connectivity-nodes-for-knime">Qlik Connectivity Nodes for KNIME</h1>
 
-      
-<h1 id="qlik-connectivity-nodes-for-knime">Qlik Connectivity Nodes for KNIME</h1>
+		<p>The purpose of the "Qlik Connectivity" collection of nodes is to read and write qvx files. The QVX Reader node converts qvx data into a Knime data
+		table. The QVX Writer node converts a Knime data table into qvx data</p>
 
-<p>The purpose of the "Qlik Connectivity" collection of nodes is to read and write qvx files. The QVX Reader node converts qvx data into a Knime data table.
-The QVX Writer node converts a Knime data table into qvx data</p>
+		<p><img src="images/Reader Example - Output.png" alt="Screenshot of a QVX Reader workflow" /></p>
+		<p><img src="images/Writer Example - Output.png" alt="Screenshot of a QVX Writer workflow" /></p>
 
-<p><img src="/images/Reader Example - Output.png" alt="Screenshot of a QVX Reader workflow" /></p>
-<p><img src="/images/Writer Example - Output.png" alt="Screenshot of a QVX Writer workflow" /></p>
+		<h1 id="features">Features:</h1>
 
+		<h2 id="read-qvx-files">Read qvx files:</h2>
 
-<h2 id="alternatives-and-originality">Alternatives and originality</h2>
+		<p>Read information from:</p>
+		<ul>
+		  <li>User's file system.</li>
+		  <li>The internet.</li>
+		</ul>
 
-<p>The Qlik Connectivity nodes were created so that data stored in qvx format could be analyzed in Knime, and so Knime data could be analyzed in QlikView</p>
-<ul>
-  <li>The <a href="https://www.knime.com/shapefile-extension">Shapefile extension</a> offers nodes to read ESRI shapefiles (either polygons or polylines). The spatial information (the lines or polygons) are stored in a column having a specific format. This spatial information can then be displayed using the OpenStreetMap nodes.</li>
-  <li>The <a href="https://nodepit.com/iu/org.knime.features.ext.osm.feature.group">OpenStreetMap nodes</a> enable to filter rows to keep only the geometries within a given geometry and to plot markers upon an openstreetmap background.</li>
-  <li>The <a href="https://www.knime.com/book/geo-nodes">Palladian Geo Nodes</a> offer to deal with point-based data. They mostly can be used to extract locations based on postal adresses, and display them on a map.</li>
-</ul>
+		<h2 id="write-qvx-files">Write qvx files:</h2>
 
-<p>These collections do provide interesting features, but also suffer limitations regarding spatial processing:</p>
-<ul>
-  <li>they do not provide reading nor writing in many formats (GML, shapefiles, databases);</li>
-  <li>they only support limited data types (points, lines, polygons) whilst in practice all the standard ones are found;</li>
-  <li>they store spatial information as a specific data type in KNIME, thus limiting the integration with the other KNIME features; for instance it is difficult for a user to forge a geometry from other data.</li>
-</ul>
+		<p>The user can choose data types for each column, or use the default data format. The allowed data types are:</p>
+		<ul>
+			<li><b>UNKNOWN: </b>Floating point numbers are represented by "UNKNOWN" by default.</li>
+			<li><b>ASCII: </b>Values are treated as text.</li>
+			<li><b>INTEGER: </b> Values are treated as integers</li>
+			<li><b>REAL: </b>Values are treated as numbers with a fixed number of significant digits. The nDecs field defines the number of decimal places.</li>
+			<li><b>FIX: </b>Values are treated as numbers with a fixed number of decimals. The nDecs field defines the number of decimal places.</li>
+			<li><b>MONEY: </b>Values are treated as money.</li>
+			<li><b>DATE: </b>Values are treated as dates, with format M/D/YYYY</li>
+			<li><b>TIME: </b>Values are treated as time, with format hh:mm:ss TT</li>
+			<li><b>TIMESTAMP: </b>Values are treated as time stamps, with format M/D/YYYY hh:mm:ss TT</li>
+			<li><b>INTERVAL: </b>Values are treated as time intervals, with format hh:mm:ss TT</li>
+		</ul>
 
-<p>We decided to create another collection of nodes which overcomes these limitations:</p>
-<ul>
-  <li>the spatial data is stored as a String column in <a href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">Well-Known Text representation</a> (WKT). This approach permits users to read the geometries in a human-readible format when it flows as tables along computations; this also enables users to forge geometries by themselves if they want.</li>
-  <li>we provide numerous nodes to read and write data in many standard formats (see features below)</li>
-  <li>we also provide numerous nodes to manipulate geometries by extracting their spatial properties (type, coordinates) and by computing spatial properties (area, distances)</li>
-  <li>the computations are delegated to the <a href="https://en.wikipedia.org/wiki/GeoTools">geotools library</a>, which stands as a reference for spatial processing in Java, and is used in well-known products such as <a href="http://geoserver.org/">Geoserver</a>.</li>
-</ul>
+		<h1 id="installation">Installation</h1>
 
-<p># Limitations</p>
+		<p>You can install these nodes in KNIME 3.7.2 or above following these steps:</p>
+		<ul>
+		  <li>in KNIME, open Help/Install new software</li>
+		  <li>Click top right button “Add”, and add the repository:
+			<ul>
+			  <li>name: “Recent unstable contributions”</li>
+			  <li>Location: http://update.knime.com/community-contributions/trunk</li>
+			</ul>
+		  </li>
+		  <li>After clicking ok, select this “Recent unstable contributions” entry in the combo box,</li>
+		  <li>Select the collection of nodes named “Spatial Processing Nodes”</li>
+		  <li>Follow the next steps to install</li>
+		</ul>
 
-<p>This collection does not intend to turn KNIME into a Geographic Information Systems. 
-Tools dedicated to this usage will always be better for this “pure” usage.<br />
-However if you have to merge data with spatial data, or extract data from spatial data, this might be of use.</p>
+		<h1 id="demo-examples">Demo, examples</h1>
 
-<h1 id="features">Features:</h1>
+		<ul>
+			<li><a href="workflows/Qvx Reader - Titanic Example.knwf" download>Qvx Reader - Titanic Example</a> - "Titanic.qvx" is read and bar graphs are generated in Knime based on this data.</li>
+			<li><a href="workflows/Qvx Writer - Feedback Example.knwf" download>Qvx Writer - Feedback Example</a> - "Feedback.csv" is read, then "Feedback.qvx" is generated.
+								QlikView can be used to create data visualizations based on this qvx file.</li>
+			<li><a href="workflows/Qvx Reader Test.knwf" download>Qvx Reader Test</a> - Variety of simple use cases for the QVX Reader node</li>
+			<li><a href="workflows/Qvx Writer Test.knwf" download>Qvx Writer Test</a> - Variety of simple use cases for the QVX Writer node. </li>
+		</ul>
 
-<h2 id="read-spatial-data-from-several-formats">Read spatial data from several formats:</h2>
+		<h1>Copyright and License</h1>
 
-<p>Read information from:</p>
-<ul>
-  <li>Spatial databases including postgis.</li>
-  <li>ESRI shapefile format; we support all the types of geometries, including lines, points or polygons.</li>
-  <li>KML</li>
-  <li>GML v3</li>
-</ul>
+		<p>Copyright (c) 2019 <a href="http://www.analytiq.io/"><b>Analytiq, Princeton, NJ</b></a>
+		This program and the accompanying materials are made available under the terms of the GNU GENERAL PUBLIC LICENSE
+		which accompanies this distribution, and is available at <a href="https://www.gnu.org/licenses/gpl-3.0.html">https://www.gnu.org/licenses/gpl-3.0.html</a></p>
 
-<h2 id="write-spatial-data-into-several-format">Write spatial data into several format</h2>
+		<h1 id="source-code">Source code</h1>
 
-<p>Write spatial data into:</p>
-<ul>
-  <li>Spatial databases, including postgis,</li>
-  <li>ESRI shapefileformat, with the limitations inherent to this old file format (short column names, limited count of columns, etc.)</li>
-  <li>KML,</li>
-  <li>GML v3</li>
-</ul>
-
-<p>## Projection and reprojection</p>
-
-<p>Spatial data ultimately corresponds to a pile of (x,y) coordinates. They only have a geographical meaning if they are considered according to a <a href="https://en.wikipedia.org/wiki/Spatial_reference_system">Coordinate Reference System</a> which defines 
-where in Earth these coordinates are. Coordinate Reference Systems might cover the entire planet with limited precision and risks of distortion, or might only cover a limited portion of the globe with high accuracy.</p>
-
-<p>Our collection deals with CRS in every step:</p>
-<ul>
-  <li>when reading data, the CRS is detected (when available, as for shapefiles) or infered</li>
-  <li>when data flows in KNIME, the CRS is transmitted as a property of the column of the data table (and can thus be viewed there)</li>
-  <li>the user can reproject geometries using the “Reproject” node compliant with standard coordinate systems,</li>
-  <li>the CRS is written along with the data according to the standard specifications</li>
-</ul>
-
-<h2 id="properties">Properties</h2>
-
-<p>Features enable to get the properties of geometries:</p>
-<ul>
-  <li>extract 2d coordinates into double columns,</li>
-  <li>get the geometry type into a string column,</li>
-  <li>extract the coordinates of geometries</li>
-</ul>
-
-<h2 id="transformation">Transformation</h2>
-
-<p>We provide basic features such as:</p>
-<ul>
-  <li>computation of surface (including an automatic transformation to get the surface as squared meters)</li>
-  <li>centroid computation,</li>
-  <li>versalile nodes to filter rows according to spatial properties, or to compute additional columns, based on the “Extented Contextual Query Language”. Those enable users to write queries based on surface, distance, proximity and other spatial operations.</li>
-  <li>nodes to compute relations between two sets of spatial entities (such as detection of overlapping),</li>
-  <li>nodes to compute operations between two sets of spatial entities (such as the computation of the union or substraction between entities)</li>
-</ul>
-
-<h2 id="visualization">Visualization</h2>
-
-<p>Visualisation of spatial data was developed in order to facilitate the verification of the transformations.
-It is compatible with the standard KNIME coloring of rows done by the <a href="https://nodepit.com/node/org.knime.base.node.viz.property.color.ColorManager2NodeFactory">Color Manager</a>.</p>
-
-<h1 id="installation">Installation</h1>
-
-<p>You can install these nodes in KNIME 3.7.2 or above following these steps:</p>
-<ul>
-  <li>in KNIME, open Help/Install new software</li>
-  <li>Click top right button “Add”, and add the repository:
-    <ul>
-      <li>name: “Recent unstable contributions”</li>
-      <li>Location: http://update.knime.com/community-contributions/trunk</li>
-    </ul>
-  </li>
-  <li>After clicking ok, select this “Recent unstable contributions” entry in the combo box,</li>
-  <li>Select the collection of nodes named “Spatial Processing Nodes”</li>
-  <li>Follow the next steps to install</li>
-</ul>
-
-<h1 id="demo-examples">Demo, examples</h1>
-
-<ul>
-  <li><a href="/knime-shapefiles-as-WKT/pages/0_read_shapefiles/">read geometries from ESRI shapefiles</a></li>
-  <li><a href="/knime-shapefiles-as-WKT/pages/1_merge_shapefiles/">merge shapefiles in KNIME</a></li>
-  <li><a href="/knime-shapefiles-as-WKT/pages/2_reproject/">reproject geometries</a></li>
-  <li><a href="/knime-shapefiles-as-WKT/pages/3_write_as_shapefile/">write spatial data into a shapefile</a></li>
-  <li><a href="/knime-shapefiles-as-WKT/pages/4_transform_KML_into_shapefile/">convert KML into shapefile format</a></li>
-  <li><a href="/knime-shapefiles-as-WKT/pages/5_color_and_view/">use the color manager to edit symboloty</a></li>
-  <li><a href="/knime-shapefiles-as-WKT/pages/6_compute_surface/">compute the surface of geometries</a></li>
-  <li><a href="/knime-shapefiles-as-WKT/pages/7_extract_attributes_excel/">extract shapefile data to Excel</a></li>
-  <li><a href="/knime-shapefiles-as-WKT/pages/9_demo_accessibility_zones/">compute the accessibility of buildings to services</a></li>
-</ul>
-
-<p># Copyright and License</p>
-
-<p>Copyright (c) 2019 <a href="https://www.eifer.kit.edu/">EIFER</a> (European Institute for Energy Research).
-This program and the accompanying materials are made available under the terms of the GNU GENERAL PUBLIC LICENSE
-which accompanies this distribution, and is available at <a href="https://www.gnu.org/licenses/gpl-3.0.html">https://www.gnu.org/licenses/gpl-3.0.html</a></p>
-
-<h1 id="source-code">Source code</h1>
-
-<p>The source code is <a href="https://github.com/samthiriot/knime-shapefiles-as-WKT/">shared in GitHub</a>.
-Contributions are warmly welcomed.
-Please report bugs, or feature requests, in the <a href="https://github.com/samthiriot/knime-shapefiles-as-WKT/issues/">GitHub bugtracker</a></p>
-
-
-
-      
-      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
-        This site is open source. <a href="https://github.com/samthiriot/knime-shapefiles-as-WKT/edit/master/docs/index.md">Improve this page</a>.
-      </div>
-      
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
-    
-  </body>
+		<p>The source code is <a href="https://github.com/analytiq-v/capstone-project">shared in GitHub</a>.
+		Contributions are warmly welcomed.
+		Please report bugs, or feature requests, in the <a href="https://github.com/samthiriot/knime-shapefiles-as-WKT/issues/">GitHub bugtracker</a></p>
+	  </div>
+	  
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+	  <script>anchors.add();</script>	
+	</body>
 </html>
